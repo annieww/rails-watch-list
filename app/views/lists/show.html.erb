@@ -5,11 +5,15 @@
     <div class="card">
         <h3><%= bookmark.movie.title %></h3>
         <p><%= bookmark.movie.overview %></p>
-        <%= link_to 'Delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-remove-link" %>
+        <p><%= bookmark.comment %></p>
+
     </div>
+    <%= link_to 'Delete bookmark', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary" %>
     <% end %>
 
-  <p><%= link_to 'Add a bookmark', new_list_bookmark_path(@list) %></p>
-  <p><%= link_to 'All movie lists', lists_path %></p>
+  <%= link_to 'Add a bookmark', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+  <%= link_to "Delete this list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning" %>
+
+  <%= link_to 'All movie lists', lists_path, class: "btn btn-outline-secondary" %>
 
 </div>

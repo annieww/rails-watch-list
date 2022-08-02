@@ -5,7 +5,8 @@
   </p>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this list", list, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this list", list, class: "btn btn-outline-secondary" %>
+    <%# <%= link_to "Delete this list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
 
     <hr class="mt-6">
   <% end %>
