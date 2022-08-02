@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>List of movies in <%= @list.name %></h1>
+
+  <% @list.movies.each do |movie| %>
+    <div class="card">
+        <h3><%= movie.title %></h3>
+        <p><%= movie.overview %></p>
+        <%# <p><%= link_to 'Delete', list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-remove-link" %>
+    </div>
+    <% end %>
+
+  <p><%= link_to 'Add a bookmark', new_list_bookmark_path(@list) %></p>
+  <p><%= link_to 'All movie lists', lists_path %></p>
+
+</div>
