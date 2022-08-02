@@ -1,11 +1,11 @@
 <div class="container">
   <h1>List of movies in <%= @list.name %></h1>
 
-  <% @list.movies.each do |movie| %>
+  <% @list.bookmarks.each do |bookmark| %>
     <div class="card">
-        <h3><%= movie.title %></h3>
-        <p><%= movie.overview %></p>
-        <%# <p><%= link_to 'Delete', list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-remove-link" %>
+        <h3><%= bookmark.movie.title %></h3>
+        <p><%= bookmark.movie.overview %></p>
+        <%= link_to 'Delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-remove-link" %>
     </div>
     <% end %>
 
