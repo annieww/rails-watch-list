@@ -1,17 +1,33 @@
-<div class="cover container">
+
+<div class="cover">
   <h1 class="font-bold text-4xl">My Movie Lists</h1>
 </div>
 
 <div class="container">
-  <div class="list-container">
 
-    <div class="list-card">
-      <div>
-        <%= render @lists %>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card">
+        <h3><%= list.name %></h3>
+        <%= link_to "Show", list_path(list), class: "btn btn-outline-secondary" %>
       </div>
-
-    </div>
+    <% end %>
+  </div>
+  <div>
+    <h3><%= link_to '+ add new list', new_list_path, class: "btn btn-dark" %></h3>
   </div>
 
-  <%= link_to 'Add a new list', new_list_path, class: "btn btn-primary" %>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    <i class="fas fa-heart"></i>
+  </div>
 </div>

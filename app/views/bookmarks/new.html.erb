@@ -1,3 +1,4 @@
+
 <div class="container">
   <h1>Add new bookmark</h1>
   <%= simple_form_for [@list, @bookmark] do |f| %>
@@ -5,7 +6,8 @@
     <%= f.input :comment, placeholder: "leave your comment" %>
     <%= f.button :submit, class: "btn btn-success" %>
   <% end %>
-  <p><%= link_to 'Cancel', list_path(@list) %></p>
-  <p><%= link_to 'Home', lists_path %></p>
-
+  <div class="footer">
+    <%= link_to 'Cancel', list_path(@list), class: "btn btn-outline-secondary" %>
+    <%= link_to 'Home', lists_path, class: "btn btn-outline-secondary" %>
+  </div>
 </div>
