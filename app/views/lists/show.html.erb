@@ -7,6 +7,7 @@
           <%= image_tag(bookmark.movie.poster_url) %>
           <h3><%= bookmark.movie.title %></h3>
           <p><%= bookmark.movie.overview %></p>
+          <p>Rating: <%= bookmark.movie.rating %></p>
           <p><em><%= bookmark.comment %></em></p>
           <%= link_to 'Delete bookmark', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary" %>
       </div>
