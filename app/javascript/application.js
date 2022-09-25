@@ -2,3 +2,8 @@
 import "@hotwired/turbo-rails"
 
 import "bootstrap";
+
+import { initUpdateNavbarOnScroll } from "./components/navbar";
+document.addEventListener('turboLinks:load', () => {
+  initUpdateNavbarOnScroll();
+});

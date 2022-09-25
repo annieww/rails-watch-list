@@ -1,8 +1,19 @@
-<head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-<body>
+
+    <%# <div class="navbar">
+      <div class="brand">
+        <div class="dropdown">
+          <span><img class="img-brand" src="images/list.png"></span>
+          <div class="dropdown-content">
+            <p>About</p>
+            <p>Portfolio</p>
+            <p>Contact</p>
+          </div>
+        </div>
+      </div>
+    </div> %>
+
   <div class="cover">
-    <h1 class="font-bold text-4xl">My Movie Lists</h1>
+    <h1 class="font-bold text-4xl"></h1>
   </div>
 
   <div class="container">
@@ -11,11 +22,16 @@
       <% @lists.each do |list| %>
         <div class="card">
           <h3><%= list.name %></h3>
+
+          <%# <%= link_to list_path(list) do %>
+            <%# <i class="fa-solid fa-video"></i>
+          <% end %>
           <%= link_to "Show", list_path(list), class: "btn btn-outline-secondary" %>
         </div>
       <% end %>
     </div>
-    <div>
+
+    <div class="page-button mt-2">
       <h3><%= link_to '+ add new list', new_list_path, class: "btn btn-dark" %></h3>
     </div>
 
@@ -24,13 +40,12 @@
   <div class="footer">
     <div class="footer-links">
       <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
+      <%# <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a> %>
     </div>
     <div class="footer-copyright">
       <i class="fas fa-heart"></i>
     </div>
   </div>
-</body>
