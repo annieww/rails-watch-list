@@ -1,17 +1,3 @@
-
-    <%# <div class="navbar">
-      <div class="brand">
-        <div class="dropdown">
-          <span><img class="img-brand" src="images/list.png"></span>
-          <div class="dropdown-content">
-            <p>About</p>
-            <p>Portfolio</p>
-            <p>Contact</p>
-          </div>
-        </div>
-      </div>
-    </div> %>
-
   <div class="cover">
     <h1 class="font-bold text-4xl"></h1>
   </div>
@@ -22,11 +8,12 @@
       <% @lists.each do |list| %>
         <div class="card">
           <h3><%= list.name %></h3>
-
-          <%# <%= link_to list_path(list) do %>
-            <%# <i class="fa-solid fa-video"></i>
-          <% end %>
-          <%= link_to "Show", list_path(list), class: "btn btn-outline-secondary" %>
+          <%= cl_image_tag(list.photo.key) %>
+          <div class="page-button mt-2">
+            <%= link_to list_path(list) do %>
+              <i class="fa-regular fa-eye"></i>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
@@ -34,6 +21,12 @@
     <div class="page-button mt-2">
       <h3><%= link_to '+ add new list', new_list_path, class: "btn btn-dark" %></h3>
     </div>
+
+    <%# <%= cl_image_tag("nxcgko32vntk54q8olnt",
+      width: 400, height: 300, crop: :fill) %>
+
+    <%# <%= cl_image_tag("qd56eq8v0uzxwqowdmss",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
 
   </div>
 

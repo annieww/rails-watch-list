@@ -1,7 +1,16 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Edit your list</h1>
+<div class="container">
+  <div class="mx-auto md:w-2/3 w-full">
+    <h1 class="font-bold text-4xl">Edit your list</h1>
+    <%= render "form", list: @list %>
 
-  <%= render "form", list: @list %>
-  <%= link_to "Show this list", @list, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Home", lists_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="page-button mt-2">
+      <%= link_to @list do %>
+        <i class="fa-solid fa-delete-left"></i>
+      <% end %>
+      <%= link_to lists_path do %>
+        <i class="fa-solid fa-home"></i>
+      <% end %>
+    </div>
+
+  </div>
 </div>

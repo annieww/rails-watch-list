@@ -9,6 +9,10 @@ class ListsController < ApplicationController
     @movie = Movie.new
   end
 
+  def edit
+    @list = List.find(params[:id])
+  end
+
   def new
     @list = List.new
   end
@@ -22,6 +26,15 @@ class ListsController < ApplicationController
     end
   end
 
+  def update
+    @list = List.find(params[:id])
+    if @list.update(list_params)
+      redirect_to list_path(@list), notice: 'Watchlist was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @list = List.find(params[:id])
     @list.destroy
@@ -31,6 +44,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
