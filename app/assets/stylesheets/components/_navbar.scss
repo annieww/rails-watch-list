@@ -20,8 +20,12 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 20px;
+.navbar-brand {
+  width: 30px;
+}
+
+.navbar-brand:hover {
+  background-color:beige;
 }
 
 .page-logo {
@@ -37,7 +41,7 @@
 }
 
 .nav-link:hover {
-  background-color: grey;
+  background-color: beige;
 }
 
 .navbar {
@@ -50,23 +54,4 @@
   // background-color: #f6f1eb;
   background-color: black;
   color: white;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.img-brand {
-  width: 40px;
-  height: 40px;
 }

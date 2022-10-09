@@ -5,21 +5,22 @@
   <div class="container">
 
     <div class="cards">
-      <% @lists.each do |list| %>
-        <div class="card">
-          <h3><%= list.name %></h3>
-          <%= cl_image_tag(list.photo.key) %>
-          <div class="page-button mt-2">
-            <%= link_to list_path(list) do %>
-              <i class="fa-regular fa-eye"></i>
+        <% @lists.each do |list| %>
+          <div class="card">
+           <%= link_to list_path(list) do %>
+            <h3><%= list.name %></h3>
+            <%= cl_image_tag(list.photo.key) %>
+              <%# <%= link_to list_path(list) do %>
+                <%# <i class="fa-regular fa-eye"></i> %>
+              <%# <% end %>
             <% end %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+
     </div>
 
-    <div class="page-button mt-2">
-      <h3><%= link_to '+ add new list', new_list_path, class: "btn btn-dark" %></h3>
+    <div class="add-button">
+      <%= link_to '+ add new list', new_list_path, class: "btn btn-dark" %>
     </div>
 
     <%# <%= cl_image_tag("nxcgko32vntk54q8olnt",
@@ -28,17 +29,14 @@
     <%# <%= cl_image_tag("qd56eq8v0uzxwqowdmss",
       width: 150, height: 150, crop: :thumb, gravity: :face) %>
 
+
   </div>
 
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <%# <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a> %>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+      <div class="footer-copyright">
+        <i class="fas fa-heart"></i>
+      </div>
     </div>
-    <div class="footer-copyright">
-      <i class="fas fa-heart"></i>
-    </div>
-  </div>

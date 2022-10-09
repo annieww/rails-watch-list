@@ -1,5 +1,14 @@
+.page-head {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.page-head img {
+  margin-bottom: 20px;
+}
+
 .card-show {
-  width: 300px;
+  width: 400px;
   height: 600px;
   border-radius: 3px;
   box-shadow: 0 0 5px rgb(230,230,230);
@@ -13,13 +22,15 @@
   padding: 10px;
 }
 .card-show img {
-  width: 200px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .cards-show {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
   // justify-content: space-evenly;
   margin-bottom: 20px;
 }
